@@ -1,0 +1,50 @@
+<div class="table w-full  rounded mt-12 ">
+
+  <table class=" w-full">
+    <thead>
+      <tr class="  border-opacity-30 h-12">
+
+        <th class=" text-sm font-bold text-gray-400">
+          Qty
+        </th>
+
+        <th class=" text-sm font-bold text-gray-400">
+          Unit
+        </th>
+        <th class=" text-sm font-bold text-gray-400">
+          Food
+        </th>
+
+        <th class=" text-sm font-bold text-gray-400">
+          Calories
+        </th>
+        <th class=" text-sm font-bold text-gray-400">
+          Weight
+        </th>
+      </tr>
+    </thead>
+    <tbody class="shadow">
+      <ng-container *ngFor="let ingredient of ingredients">
+        <tr class="  border-opacity-30 h-12 border border-b bg-white ">
+          <td class="text-sm  text-tertiary text-center">
+            {{ingredient.parsed[0].quantity}}
+          </td>
+          <td class="text-sm  text-tertiary  text-center">
+            {{ingredient.parsed[0].measure}}
+          </td>
+          <td class="text-sm text-tertiary   text-center">
+            {{ingredient.parsed[0].food}}
+          </td>
+
+          <td class="text-sm text-tertiary text-center">
+            {{calculatorCaloriesItem(ingredient.parsed[0].weight)}}
+          </td>
+          <td class="text-sm text-tertiary  text-center">
+            {{ingredient.parsed[0].weight}}
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+</div>

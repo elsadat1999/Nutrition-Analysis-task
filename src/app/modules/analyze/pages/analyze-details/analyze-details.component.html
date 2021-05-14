@@ -1,0 +1,12 @@
+<header-component></header-component>
+<div class="max-w-screen-xl mx-auto">
+ <ng-container  *ngIf="!placeholderLoading">
+  <items-table-component  [totalWeight]="totalWeight" [totaCalories]="totaCalories" [ingredients]="ingredients"></items-table-component>
+  <button class=" h-12 text-white rounded  px-6 bg-tertiary mt-6 float-right">
+    Total nutrients
+  </button>
+ </ng-container>
+
+  <placeholder-table-component  *ngIf="placeholderLoading"></placeholder-table-component>
+</div>
+

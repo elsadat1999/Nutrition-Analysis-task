@@ -1,0 +1,17 @@
+tr {
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-color: #eee;
+}
+tr:first-child td:first-child {
+    border-top-left-radius: 5px;
+}
+tr:first-child td:last-child {
+    border-top-right-radius: 5px;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
