@@ -19,7 +19,6 @@ export class AnalyzeActionComponent implements OnInit {
     this.servingsCount--
   }
   increment():void  {
-    console.log(this.foodTextAnalysis?.nativeElement.value.split('\n'))
     this.servingsCount++
   }
   analyze(){

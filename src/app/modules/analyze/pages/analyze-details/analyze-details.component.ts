@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Config } from 'src/app/shared/confing/config';
 import { HttpService } from 'src/app/shared/services/http.service';
 import { Ingredient } from './models/ingredient.interface';
+import { TotalNutrients } from './models/total-nutrients.interface';
 
 @Component({
   selector: 'app-analyze-details',
@@ -14,6 +15,8 @@ export class AnalyzeDetailsComponent implements OnInit {
   placeholderLoading:boolean = false;
   totalWeight:number = 0;
   totaCalories:number = 0;
+  totalNutrients:TotalNutrients = new TotalNutrients();
+  totalNutrientsToggle:boolean = false;
   constructor(private route: ActivatedRoute, private httpService: HttpService) {
   }
   ngOnInit() {
@@ -30,6 +33,7 @@ export class AnalyzeDetailsComponent implements OnInit {
       this.ingredients = res.ingredients;
       this.totalWeight = res.totalWeight;
       this.totaCalories = res.calories;
+      this.totalNutrients = res.totalNutrients;
       this.placeholderLoading=false;
     },error=>{
       this.placeholderLoading=false;

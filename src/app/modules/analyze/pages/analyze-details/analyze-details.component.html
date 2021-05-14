@@ -1,10 +1,12 @@
 <header-component></header-component>
-<div class="max-w-screen-xl mx-auto">
+<div class="xl:max-w-screen-xl md:max-w-screen-md lg:max-w-screen-lg sm:max-w-screen-sm sm:mx-auto mx-2">
  <ng-container  *ngIf="!placeholderLoading">
   <items-table-component  [totalWeight]="totalWeight" [totaCalories]="totaCalories" [ingredients]="ingredients"></items-table-component>
-  <button class=" h-12 text-white rounded  px-6 bg-tertiary mt-6 float-right">
-    Total nutrients
+
+  <button (click)="totalNutrientsToggle = !totalNutrientsToggle" class=" h-12 text-white rounded  px-6 bg-tertiary mt-6 float-right">
+    Total nutrients  {{totalNutrientsToggle? 'hidden':'show'}}
   </button>
+  <total-nutrients-table-component *ngIf="totalNutrientsToggle" [totalNutrients]="totalNutrients"></total-nutrients-table-component>
  </ng-container>
 
   <placeholder-table-component  *ngIf="placeholderLoading"></placeholder-table-component>

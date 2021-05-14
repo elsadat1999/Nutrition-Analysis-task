@@ -7,17 +7,26 @@ import { Ingredient } from '../../models/ingredient.interface';
   styleUrls: ['./items-table.component.scss']
 })
 export class ItemsTableComponent implements OnInit {
- @Input() ingredients:Ingredient[] = [];
- @Input() totalWeight:number = 0;
- @Input() totaCalories:number = 0;
+  @Input() ingredients: Ingredient[] = [];
+  @Input() totalWeight: number = 0;
+  @Input() totaCalories: number = 0;
+  showErorr: boolean = false;
   constructor() { }
 
   ngOnInit() {
-    console.log(this.ingredients[1].parsed[0].quantity  )
   }
-  calculatorCaloriesItem(weight:number):number{
+  calculatorCaloriesItem(weight: number): number {
 
-   return Math.round(weight / this.totalWeight * this.totaCalories)
-   
+    return Math.round(weight / this.totalWeight * this.totaCalories)
+
   }
+
+  checkResults(text: string = ''): boolean {
+    if (text == '') {
+      this.showErorr = true;
+      return false
+    }
+    return true
+  }
+
 }

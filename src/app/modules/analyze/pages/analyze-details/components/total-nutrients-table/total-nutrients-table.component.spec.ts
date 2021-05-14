@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { EmptyStateComponent } from './empty-state.component';
+import { TotalNutrientsTableComponent } from './total-nutrients-table.component';
 
-describe('EmptyStateComponent', () => {
-  let component: EmptyStateComponent;
-  let fixture: ComponentFixture<EmptyStateComponent>;
+describe('TotalNutrientsTableComponent', () => {
+  let component: TotalNutrientsTableComponent;
+  let fixture: ComponentFixture<TotalNutrientsTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmptyStateComponent ]
+      declarations: [ TotalNutrientsTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmptyStateComponent);
+    fixture = TestBed.createComponent(TotalNutrientsTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
