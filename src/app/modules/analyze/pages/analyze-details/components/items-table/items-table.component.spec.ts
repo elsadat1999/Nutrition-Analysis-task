@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { ItemsTableComponent } from './items-table.component';
 
-fdescribe('ItemsTableComponent', () => {
+describe('ItemsTableComponent', () => {
   let component: ItemsTableComponent;
   let fixture: ComponentFixture<ItemsTableComponent>;
 
@@ -40,9 +40,10 @@ fdescribe('ItemsTableComponent', () => {
     expect(component.showErorr).toBeTruthy();
   });
 
-  
-  it('Verify that the error message is displayed', () => {
-    component.checkResults('',{});
-    expect(component.showErorr).toBeTruthy();
+
+  it('Check calories count', () => {
+    component.totalWeight = 450,
+    component.totaCalories = 400,
+    expect(component.calculatorCaloriesItem(300)).toEqual(267);
   });
 });

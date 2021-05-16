@@ -22,7 +22,6 @@ export class ItemsTableComponent implements OnInit {
   }
 
   checkResults(text: string = '',parsed:any): boolean {
-    console.log(parsed)
     if (text == '' || parsed == undefined) {
       this.showErorr = true;
       return false

@@ -5,7 +5,7 @@
   <textarea placeholder="eg, 1 Cup orange juice, 2 Carrots" #foodTextAnalysis="ngModel" name="foodTextAnalysis" ngModel
     required class=" w-full  resize-none h-40 border  rounded-md focus:outline-none p-3"></textarea>
   <div class=" flex items-center w-full justify-between">
-    <button (click)="analyze()" [ngClass]="{' opacity-50': foodTextAnalysis.invalid}"
+    <button name="analyze" (click)="analyze()" [disabled]="foodTextAnalysis.invalid" [ngClass]="{' opacity-50': foodTextAnalysis.invalid}"
       class="bg-tertiary focus:outline-none  text-white px-3 py-2 rounded-md">
       Analyse
     </button>

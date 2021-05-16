@@ -26,10 +26,9 @@ export class AnalyzeDetailsComponent implements OnInit {
   getAnalyzeNutrition() {
     this.placeholderLoading = true;
     const query ={
-      ingr:this.route.snapshot.queryParams.ingr.split('\n'),
-      yield:`${this.route.snapshot.queryParams.servings}  servings`
+      ingr:this.route.snapshot.queryParams.ingr.split('\n')
     }
-    this.httpService.post(Config.nutritionDetails,query).subscribe(res=>{
+   return this.httpService.post(Config.nutritionDetails,query).subscribe(res=>{
       this.ingredients = res.ingredients;
       this.totalWeight = res.totalWeight;
       this.totaCalories = res.calories;

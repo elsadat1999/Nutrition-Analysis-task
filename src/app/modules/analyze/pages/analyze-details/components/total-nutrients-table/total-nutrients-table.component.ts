@@ -13,7 +13,6 @@ nutrients:Nutrients[]= [];
 
   ngOnInit() {
     this.nutrients = Object.values(this.totalNutrients);
-    console.log(Object.values(this.totalNutrients))
   }
 
 }
