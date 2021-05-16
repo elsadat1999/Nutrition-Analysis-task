@@ -7,23 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./analyze-action.component.scss']
 })
 export class AnalyzeActionComponent implements OnInit {
-  @ViewChild('foodTextAnalysis',{read: ElementRef}) foodTextAnalysis:ElementRef | undefined;
+  @ViewChild('foodTextAnalysis', { read: ElementRef }) foodTextAnalysis: ElementRef | undefined;
   servingsCount: number = 1;
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  decrement():void {
-    if (this.servingsCount == 1) return;
-    this.servingsCount--
-  }
-  increment():void  {
-    this.servingsCount++
-  }
-  analyze(){
+
+  analyze() {
     const ingr = this.foodTextAnalysis?.nativeElement.value
-    this.router.navigate(['/analyze/analyze-details'],{queryParams:{ingr,servings:this.servingsCount}})
+    this.router.navigate(['/analyze/analyze-details'], { queryParams: { ingr, servings: this.servingsCount } })
   }
- 
+
 }

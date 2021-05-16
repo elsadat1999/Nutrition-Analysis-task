@@ -3,7 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Config } from '../confing/config';
-import { Response } from './../models/response.model';
 
 @Injectable({
     providedIn: 'root'
@@ -12,12 +11,12 @@ import { Response } from './../models/response.model';
 
 export class HttpService {
     constructor(private http: HttpClient) { }
-    get<T>(path: string, params: any = new HttpParams()): Observable<Response<T>> {
-        return this.http.get<Response<T>>(`${Config.apiUrl}${path}`, { params })
+    get<T>(path: string, params: any = new HttpParams()): Observable<T> {
+        return this.http.get<T>(`${Config.apiUrl}${path}`, { params })
     }
 
-    getLocal<T>(path: string, params: any = new HttpParams()): Observable<Response<T>> {
-        return this.http.get<Response<T>>(path, { params })
+    getLocal<T>(path: string, params: any = new HttpParams()): Observable<T> {
+        return this.http.get<T>(path, { params })
     }
     post(path: string, body: Object = {}): Observable<any> {
         return this.http.post(`${Config.apiUrl}${path}`, body)

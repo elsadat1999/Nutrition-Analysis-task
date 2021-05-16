@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { ItemsTableComponent } from './items-table.component';
 
-describe('ItemsTableComponent', () => {
+fdescribe('ItemsTableComponent', () => {
   let component: ItemsTableComponent;
   let fixture: ComponentFixture<ItemsTableComponent>;
 
@@ -24,5 +24,25 @@ describe('ItemsTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+
+  it('Check data validation', () => {
+    expect(component.checkResults('',{})).toBeFalsy();
+    expect(component.checkResults('1 apple',undefined)).toBeFalsy();
+    expect(component.checkResults('1 apple',{quantity:1})).toBeTruthy();
+  });
+
+
+
+  it('Verify that the error message is displayed', () => {
+    component.checkResults('',{});
+    expect(component.showErorr).toBeTruthy();
+  });
+
+  
+  it('Verify that the error message is displayed', () => {
+    component.checkResults('',{});
+    expect(component.showErorr).toBeTruthy();
   });
 });

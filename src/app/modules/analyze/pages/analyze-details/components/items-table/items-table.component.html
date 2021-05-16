@@ -25,7 +25,7 @@
     </thead>
     <tbody class="shadow relative">
       <ng-container *ngFor="let ingredient of ingredients">
-        <tr class="  border-opacity-30 h-12 border border-b bg-white "  *ngIf="checkResults(ingredient.text)">
+        <tr class="  border-opacity-30 h-12 border border-b bg-white "  *ngIf="checkResults(ingredient.text,ingredient.parsed)">
           <td class="text-sm  text-tertiary text-center">
             {{ingredient.parsed[0].quantity}}
           </td>
@@ -46,5 +46,14 @@
       </ng-container>
     </tbody>
   </table>
+   <div *ngIf="ingredients.length > 1">
+    <div class="border-opacity-30 px-4 py-3 w-48 border text-secondary bg-white ">
+      Tota calories : {{totaCalories}}
+       </div>
+       <div class="border-opacity-30 px-4 py-3 w-48 border text-secondary bg-white ">
+        Tota weight : {{totalWeight}}
+         </div>
+   </div>
+
   <error-massage-component *ngIf="showErorr" class="border-opacity-30 h-12 border border-b bg-white  text-center w-full" massage="We cannot calculate the nutrition for some ingredients. Please check the ingredient spelling or if you have entered a quantities for the ingredients."></error-massage-component>
 </div>
